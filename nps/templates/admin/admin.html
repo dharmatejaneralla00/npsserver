@@ -1,306 +1,94 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Panel</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    table {
+    width:75%;
+  border: 1px solid #1694d8;
+
+  color: #1694d8;
+    }
+    th, td {
+  padding: 15px;
+}
+th{
+    border-bottom: 1px solid #1694d8;
+    text-align: left;
+}
+    </style>
+
+
 </head>
-<style>
-    body {
-    width: 85%;
-    margin: 0 auto;
-    padding-top:0%;
-    background-color: white;
-    font-size: 20px;
-    font-family: 'Segoe UI';
-    color: white;
-  }
-
-  header[role="banner"] {
-    margin-top: 20px;
-    height: 135px;
-    border: solid 10px white;
-  }
-
-  h1 {
-    font-size: 60px;
-    text-align: center;
-    color: white;
-    text-shadow: 0 1px 1px white;
-    margin: 5px 0 0 0;
-  }
-
-  nav {
-    margin: 0 auto;
-    width: 83%;
-  }
-
-  nav ul {
-    text-align: center;
-    font-family: Arial, Verdana;
-    font-size: 18px;
-    list-style: none;
-  }
-
-  nav ul li {
-    display: inline-block;
-    height: 20px;
-    width: 95px;
-    margin: 0 55px 0 5px;
-    white-space: nowrap;
-  }
-
-  nav ul li a {
-    text-decoration: none;
-    padding: 5px 20px;
-    background: white;
-    color:white;
-    text-shadow: 0 0px 0px rgba(0, 0, 0, .5);
-    border: solid 4px white;
-  }
-
-  article {
-    position: relative;
-    background-color: white;
-    border: double 10px white;
-   /* text-shadow: 0 1px 1px white;*/
-    height: 550px;
-    width: 600px;
-  }
-
-  article h2 {
-    color: #0A79B6;
-    font-size: 24px;
-    line-height: 14px;
-    margin: 20px 0 0 0;
-    padding: 10px 20px;
-  }
-
-  article p {
-    color: blue;
-    line-height: 24px;
-    padding: 2px 20px;
-  }
-
-  section {
-    background-color: white;
-    border: double 1px skyblue;
-    padding: 0px;
-    margin: 10px 10px;
-  }
-
-  section h3 {
-    color: black;
-    font-size: 22px;
-    line-height: 14px;
-    margin: 10px 0 0 0;
-    padding: 20px 5px 0 20px;
-    /*text-shadow: 0 1px 1px rgba(0, 0, 0, .5);*/
-  }
-
-  section p {
-    color: skyblue;
-    font-size: 16px;
-    font-style: italic;
-    line-height: 22px;
-  }
-
-  aside {
-    position: relative;
-    top: -535px;
-    left: 640px;
-    background-color: white;
-    border: solid 1px rgb(255, 255, 255);
-    height: 250px;
-    width: 250px;
-   /* text-shadow: 0 1px 1px rgba(0, 0, 0, .5);*/
-  }
-
-  aside h3 {
-    color: blue;
-    font-size: 24px;
-    line-height: 14px;
-    margin: 20px 0px 0px 0px;
-    padding: 10px 20px;
-  }
-
-  aside p {
-    color: skyblue;
-    line-height: 22px;
-    padding: 0 20px;
-  }
-  table {
-
-    border-collapse: collapse;
-    width: 100%;
-    border: 0px solid;
-    text-align: center;
-
-  }
-
-  tr {
-    /*border-bottom: 1px solid #0A79B6;*/
-    border-color: white;
-   /* border-collapse: collapse;*/
-    text-align: center;
-    font-family: 'Segoe UI';
-    color: #98e4f1;
-    border: 0px;
-
-  }
-  .button {
-    background-color: #0a79b6;
-    border: none;
-    color: white;
-    padding: 2px 30px;
-    padding-left: 10px;
-    padding-right: 3px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-
-  }
-  .buttonsub
-  {
-    background-color: #0075b4;
-    border: none;
-    color: white;
-    padding: 4px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-
-  }
-  .buttonsub1
-  {
-    background-color: #0a79b6;
-    border: none;
-    color: white;
-    padding: 4px 44px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-
-  }
-  .img
-  {
-    position: relative;
-    right: 170px;
-  }
-  .button2 {
-    background-color: white;
-    color: black;
-    border: 2px solid #008CBA;
-  }
-
-  .button2:hover {
-    background-color: #008CBA;
-    color: white;
-  }
-
-  th,td {
-      font-size: small;
-      text-align: center;
-    border: 0px solid #0A79B6;
-    color: #0A79B6;
-    padding: 10px;
-  }
-
-  tr:nth-child(even) {
-    background: white;
-  }
-
-  tr:hover {
-    background: white;
-  }
-  .dropbtn {
-    background-color: #0A79B6;
-    color: white;
-    padding: 4px 44px;
-    font-size: 14px;
-    margin: 4px 2px;
-    border: none;
-  }
-
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    margin-left:5%;
-    margin-right:5%;
-    padding:30px;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-
-  .dropdown-content a {
-    color: black;
-    padding: 10px 10px;
-    font-size: small;
-    text-decoration: none;
-    display: block;
-  }
-  color
-  {
-  background : #0b76d4;
-  }
-
-  .dropdown-content a:hover {background-color: #ddd;}
-
-  .dropdown:hover .dropdown-content {display: block;}
-
-  .dropdown:hover .dropbtn {background-color: #0A79B6;}
-.my-custom-scrollbar1 {
-position: relative;
-height: 475px;
-overflow: auto;
-}
-.table-wrapper-scroll-y {
-display: block;
-}
-.my-custom-scrollbar2 {
-position: relative;
-height: 175px;
-overflow: auto;
-}
-</style>
 <body>
-<article>
-      <div class="dropdown">
-        <button class="dropbtn" style="padding:15px;padding-left:40px; padding-right:40px;">APPLICATION</button>
-        <div class="dropdown-content">
-          <a href="newapplication">PATENT</a>
-          <a href="newapp1">FULL PATENT</a>
-        </div>
-      </div>
-      <br>
-        <div style="border:1px solid #000;" class="table-wrapper-scroll-y my-custom-scrollbar1">
-            <table class="table-hover table-responsive" >
-          <th style="border-bottom:1pt solid black;"> S.No</th>
-          <th style="border-bottom:1pt solid black;"> Application No</th>
-          <th style="border-bottom:1pt solid black;"> Title</th>
-          <th style="border-bottom:1pt solid black;"> Organization </th>
-          <th style="border-bottom:1pt solid black;"> Type </th>
-          <th style="border-bottom:1pt solid black;">        </th>
-        </table>
-        </div>
-      </article>
+    {% include 'navigation/topnavbar.html' %}
+    <div>
+        <table align="center" style="margin-top:4%;">
+            <tr >
+              <th>S.No.</th>
+              <th>Application No.</th>
+              <th>Status</th>
+              <th></th>
+             </tr>
+
+            <tr>
+                <td>1</td>
+                <td>U20222345221</td>
+                <td>Drafting</td>
+                <td><button type="button" style="background-color: #1694d8;color: white;border-color: #1694d8;">Edit</button></td>
+              </tr>
+              <tr>
+                <td>2</th>
+                <td>U20222345222</td>
+                <td>Designing</td>
+                <td><button type="button" style="background-color: #1694d8;color: white;border-color: #1694d8;">Edit</button></td>
+              </tr>
+              <tr>
+                <td>3</th>
+                <td>U20222345223</td>
+                <td>NDA Completed</td>
+                <td><button type="button" style="background-color: #1694d8;color: white;border-color: #1694d8;">Edit</button></td>
+              </tr>
+              <tr>
+                <td>4</th>
+                <td>U20222345224</td>
+                <td>Filed</td>
+                <td><button type="button" style="background-color: #1694d8;color: white;border-color: #1694d8;">Edit</button></td>
+              </tr>
+              <tr>
+                <td>5</th>
+                <td>U20222345225</td>
+                <td>Published</td>
+                <td><button type="button" style="background-color: #1694d8;color: white;border-color: #1694d8;">Edit</button></td>
+              </tr>
+              <tr>
+                <td>6</th>
+                <td>U20222345226</td>
+                <td>Granted</td>
+                <td><button type="button" style="background-color: #1694d8;color: white;border-color: #1694d8;">Edit</button></td>
+              </tr>
+              <tr>
+                <td>7</th>
+                <td>U20222345227</td>
+                <td>Pentability Search</td>
+                <td><button type="button" style="background-color: #1694d8;color: white;border-color: #1694d8;">Edit</button></td>
+              </tr>
+              <tr>
+                <td>8</th>
+                <td>U20222345228</td>
+                <td>Drafting</td>
+                     <td><button type="button" style="background-color: #1694d8;color: white;border-color: #1694d8;">Edit</button></td>
+              </tr>
+          </table>
+          </div>
 </body>
 </html>

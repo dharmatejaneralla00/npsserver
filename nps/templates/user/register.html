@@ -54,11 +54,16 @@ div {
               <input type="text" id="lname" name="password" placeholder="password">
               <input type="text" id="lname" name="name" placeholder="Name">
               <input type="text" id="lname" name="contact number" placeholder="Contact Number">
-                <select id="mode of contact" name="Team">
-            <option value="mode of contact" hidden>Team</option>
-            <option value="online">Online</option>
+                <select id="mode of contact" name="team">
+            <option  hidden>Team</option>
+                    {% for i in con %}
+            <option value="{{i}}">{{i}}</option>
+                    {% endfor %}
           </select>
                 <button class="button">Submit</button></form>
+    {% for i in messages %}
+    {{i}}
+    {% endfor %}
             </div>
 </body>
 </html>
