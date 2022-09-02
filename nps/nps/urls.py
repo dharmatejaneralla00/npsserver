@@ -20,5 +20,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/',include('login.urls')),
     path('adminpanel/',include('adminpanel.urls')),
-    path('',include('home.urls'))
+    path('',include('home.urls')),
+    path('patent/',include('Patent.urls')),
+    path('copyright/',include('Copyright.urls')),
+    path('design/',include('Design.urls')),
+    path('trademark/',include('Trademark.urls')),
 ]
