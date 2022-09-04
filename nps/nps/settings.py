@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'adminpanel',
     'home',
     'login',
+    'FullPatent',
+    'Patent',
+    'Copyright',
+    'Trademark',
+    'Design',
 
 ]
 

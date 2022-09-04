@@ -1,31 +1,54 @@
-from django.shortcuts import render
+from django.shortcuts import render,request
+from .models import FullPatentapplication,Patentapplication
 
 # Create your views here.
-def FullPatentapplication(r):
-    return render(r,"Patent/FullPatentapplication.html")
+def FullPatentapplicationview(request):
+    if request.method == 'POST':
+        title = request.POST['title']
+        organization = request.POST['organization']
+        resource = request.POST['resource']
+        referedby = request.POST['referedby']
+        contactnumber = request.POST['contactnumber']
+        emailid = request.POST['emailid']
+        r = FullPatentapplication(title=title, organization=organization, resource=resource, referedBy=referedby
+                      , contactnumber=contactnumber, email=emailid)
+        r.save()
+    else:
+         return render(request,"Patent/FullPatentapplication.html")
 
-def Patentapplication(r):
-    return render(r,"Patent/Patentapplication.html")
+def Patentapplicationview(request):
+    if request.method == 'POST':
+        title = request.POST['title']
+        organization = request.POST['organization']
+        resource = request.POST['resource']
+        referedby = request.POST['referedby']
+        contactnumber = request.POST['contactnumber']
+        emailid = request.POST['emailid']
+        r = Patentapplication(title=title, organization=organization, resource=resource, referedBy=referedby
+                                  , contactnumber=contactnumber, email=emailid)
+        r.save()
+    else:
+          return render(request,"Patent/Patentapplication.html")
 
-def Documentationstatus(r):
+def Documentationstatusview(r):
     return render(r,"Patent/Documentationstatus.html")
 
-def Documentationtable(r):
+def Documentationtableview(r):
     return render(r,"Patent/Documentationtable.html")
 
-def Draftingstatus(r):
+def Draftingstatusview(r):
     return render(r,"Patent/Draftingstatus.html")
 
-def Draftingtable(r):
+def Draftingtableview(r):
     return render(r,"Patent/Draftingtable.html")
 
-def Drawingstatus(r):
+def Drawingstatusview(r):
     return render(r,"Patent/Drawingstatus.html")
 
-def Drawingtable(r):
+def Drawingtableview(r):
     return render(r,"Patent/Drawingtable.html")
 
-def Patentabilitysearchstatus(r):
+def Patentabilitysearchstatusview(r):
     return render(r,"Patent/Patentabilitysearchstatus.html")
 
 def Patentabilitysearchtable(r):
