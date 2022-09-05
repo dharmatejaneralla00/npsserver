@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import FullPatentapplication,Patentapplication
+from .models import Patentapplication
 
 # Create your views here.
 def FullPatentapplicationview(request):
@@ -10,7 +10,7 @@ def FullPatentapplicationview(request):
         referedby = request.POST['referedby']
         contactnumber = request.POST['contactnumber']
         emailid = request.POST['emailid']
-        r = FullPatentapplication(title=title, organization=organization, resource=resource, referedBy=referedby
+        r = Patentapplication(title=title, organization=organization, resource=resource, referedBy=referedby
                       , contactnumber=contactnumber, email=emailid)
         r.save()
     else:

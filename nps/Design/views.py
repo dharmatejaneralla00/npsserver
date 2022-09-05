@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render
 from .models import Design
 
 # Create your views here.
@@ -17,7 +17,8 @@ def Designapplicationview(request):
          return render(request,"Design/Designapplication.html")
 
 def Designtableview(r):
-    return render(r,"Design/Designtable.html")
+    c = Design.objects.all()
+    return render(r,"Design/Designtable.html",{'c':c})
 
 def Designstatusview(r):
     return render(r,"Design/Designstatus.html")

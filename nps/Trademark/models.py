@@ -9,6 +9,7 @@ class Trademark(models.Model):
     referedby = models.IntegerField()
     conntactnumber = models.CharField(max_length=10)
     emailid = models.EmailField(max_length=50)
+    uid = models.CharField(max_length=20)
 
     def __str__(self):
         return self.title

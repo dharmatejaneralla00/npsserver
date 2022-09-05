@@ -9,6 +9,6 @@ class Copyright(models.Model):
     referedby = models.IntegerField()
     conntactnumber = models.CharField(max_length=20)
     emailid = models.EmailField(max_length=20)
-
+    uid=models.CharField(max_length=20)
     def __str__(self):
       return self.title

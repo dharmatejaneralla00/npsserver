@@ -17,7 +17,8 @@ def Trademarkapplicationview(request):
           return render(request,"Trademark/Trademarkapplication.html")
 
 def Trademarkstatusview(r):
-    return render(r,"Trademark/Trademarkstatus.html")
+    c = Trademark.objects.all()
+    return render(r,"Trademark/Trademarkstatus.html",{'c':c})
 
 def Trademarktableview(r):
     return render(r,"Trademark/Trademarktable.html")
