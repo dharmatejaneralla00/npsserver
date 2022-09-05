@@ -3,7 +3,8 @@ from .models import Copyright
 
 # Create your views here.
 def Copyrighttableview(r):
-    return render(r,"copyright/Copyrighttable.html")
+    c = Copyright.objects.all()
+    return render(r,"copyright/Copyrighttable.html",{'c':c})
 
 def Copyrightstatusview(r):
     return render(r,"copyright/Copyrightstatus.html")

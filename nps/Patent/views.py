@@ -1,4 +1,4 @@
-from django.shortcuts import render,request
+from django.shortcuts import render
 from .models import FullPatentapplication,Patentapplication
 
 # Create your views here.
@@ -51,6 +51,6 @@ def Drawingtableview(r):
 def Patentabilitysearchstatusview(r):
     return render(r,"Patent/Patentabilitysearchstatus.html")
 
-def Patentabilitysearchtable(r):
+def Patentabilitysearchtableview(r):
     return render(r,"Patent/Patentabilitysearchtable.html")
 

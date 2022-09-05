@@ -1,4 +1,4 @@
-{{% include topnavbar.html %}}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,45 +24,20 @@ th{
     </style>
 
 </head>
+{% include 'navigation/topnavbar.html' %}
 <body>
   <button style="margin-left: 10%;background-color: #1694d8;padding:10px;color: white;">COPYRIGHT</button>
-        <table style="margin-top:5%;margin-left:15%;align="center">
+        <table style="margin-top:5%;margin-left:15%;align=">
             <tr >
-              <th>S.No.</th>
               <th>Application No.</th>
+              <th>Tilte</th>
              </tr>
-        
-            <tr>
-                <td>1</th>
-                <td>U20222345221</td>
+        {% for i in c %}
+           <tr>
+                <td>{{i.uid}}</td>
+                <td>{{i.title}}</td>
               </tr>
-              <tr>
-                <td>2</th>
-                <td>U20222345222</td>
-              </tr>
-              <tr>
-                <td>3</th>
-                <td>U20222345223</td>
-              </tr>
-              <tr>
-                <td>4</th>
-                <td>U20222345224</td>
-              </tr>
-              <tr>
-                <td>5</th>
-                <td>U20222345225</td>
-              </tr>
-              <tr>
-                <td>6</th>
-                <td>U20222345226</td>
-              </tr>
-              <tr>
-                <td>7</th>
-                <td>U20222345227</td>
-              </tr><tr>
-                <td>8</th>
-                <td>U20222345228</td>
-              </tr>
+            {% endfor %}
           </table>
 </body>
 </html>

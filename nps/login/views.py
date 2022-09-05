@@ -9,22 +9,23 @@ from . import models
 
 
 def loginuser(r):
-    if not r.user.is_authenticated:
+    # if not r.user.is_authenticated:
         if r.method == 'POST':
             username = r.POST['username']
             password = r.POST['password']
+            print(username)
             user = authenticate(username=username, password=password)
             if user:
+                print(username)
                 login(r, user)
                 userModel = models.Usermodel.objects.get(username=username)
                 team = userModel.teamname
                 if team == 'admin':
-                    return render(r, 'adminpanel/')
+                    print('admin')
+                    return redirect('adminpanel')
             else:
                 messages.error(r, "user not found")
-    else:
-        return
-    return render(r, 'user/login.html')
+        return render(r, 'user/login.html')
 
 
 def registeruser(request):
