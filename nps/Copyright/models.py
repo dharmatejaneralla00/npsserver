@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Copyright(models.Model):
     title = models.CharField(max_length=20)
@@ -9,6 +10,7 @@ class Copyright(models.Model):
     referedby = models.IntegerField()
     conntactnumber = models.CharField(max_length=20)
     emailid = models.EmailField(max_length=20)
-    uid=models.CharField(max_length=20)
+    uid = models.CharField(max_length=20)
+
     def __str__(self):
-      return self.title
+        return self.title
