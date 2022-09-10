@@ -10,5 +10,13 @@ class Copyright(models.Model):
     conntactnumber = models.CharField(max_length=20)
     emailid = models.EmailField(max_length=20)
     uid=models.CharField(max_length=20)
+
     def __str__(self):
       return self.title
+
+
+class Copyrightstatus(models.Model):
+    uid = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.uid
