@@ -13,3 +13,9 @@ class Trademark(models.Model):
 
     def __str__(self):
         return self.title
+
+class Trademarkstatus(models.Model):
+    uid = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.uid

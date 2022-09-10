@@ -13,3 +13,10 @@ class Design(models.Model):
 
     def __str__(self):
       return self.title
+
+
+class Designstatus(models.Model):
+    uid = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.uid

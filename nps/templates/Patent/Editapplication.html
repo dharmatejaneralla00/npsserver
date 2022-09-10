@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    *{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+    div {
+        width: 1080px;
+        height: 450px;
+        border: 2px solid rgb(27, 190, 219);
+        margin: 2px;
+        position: relative;
+        left: 80px; 
+        right: 20px;
+        bottom: 2px;
+        border-radius: 10px;
+    }
+    ::placeholder {
+  color: rgba(0, 162, 255, 0.548);
+  opacity: 1; /* Firefox */
+}
+
+    .container input{
+    font-size: 12px;
+    
+    width:600px;
+    padding: 8px 12px;
+    
+    border-color: dodgerblue;
+    border-style:solid;
+    }
+    .container button{
+        width: 15%;
+    font-size: 12px;
+    color: white;
+    margin: 40px 0;
+    padding: 8px 12px;
+    background-color: rgb(7, 226, 146);
+    border-color: white;
+    position: relative;
+    top: 2px;
+    left:20px;
+    
+}
+body{
+    color: rgb(0, 128, 255);
+}
+#button1{
+    width: 15%;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    margin: 40px 0;
+    padding: 8px 12px;
+    background-color: rgb(50, 105, 186);
+    border-color: white;
+    position: relative;
+    top: 2px;
+    left:20px;
+
+}
+.holder input{
+
+    padding: auto;
+}
+div .holder{
+    height: 200px;
+}
+.holder button{width: 15%;
+    font-size: 12px;
+    color: white;
+    margin: 40px 0;
+    padding: 8px 12px;
+    background-color: rgb(7, 226, 146);
+    border-color: white;
+    position: relative;
+    top: 2px;
+    left:20px;
+
+}
+.hopper input{
+    font-size: 12px;
+    
+    width:600px;
+    padding: 8px 12px;
+    
+    border-color: dodgerblue;
+    border-style:solid;
+    
+}
+.hopper button{width: 15%;
+    font-size: 12px;
+    color: white;
+    margin: 40px 0;
+    padding: 8px 12px;
+    background-color: rgb(7, 226, 146);
+    border-color: white;
+    position: relative;
+    top: 2px;
+    left:20px;
+
+}
+#button3{
+    width: 15%;
+    font-size: px;
+    text-align: center;
+    color: white;
+    margin: 40px 0;
+    padding: 8px 12px;
+    background-color:red;
+    border-color: white;
+    position: relative;
+    top: 15px;
+    left:40%;
+right: 50px;    
+
+}
+#button4{
+    width: 15%;
+    font-size: px;
+    text-align: center;
+    color: white;
+    margin: 40px 0;
+    padding: 8px 12px;
+    background-color: rgba(6, 230, 88, 0.568);
+    border-color: white;
+    position: relative;
+    top: 15px;
+    left:50%;
+right: 45px;    
+
+}
+.hopper3 input{
+    font-size: 12px;
+    padding: 4px 8px;
+    border-color: dodgerblue;
+    border-style:solid;
+}
+#button6{
+    width: 15%;
+    font-size: px;
+    text-align: center;
+    color: white;
+    margin: 40px 0;
+    padding: 8px 12px;
+    background-color: rgb(16, 232, 164);
+    border-color: white;
+    position: relative;
+    top: 0px;
+    left:65%;
+right: 56px;  
+}   
+ .hopper3 div{
+    
+    height: 300px;
+}
+</style>
+{% include 'navigation/topnavbar.html' %}
+<body><br>
+    
+    <center><h5 ><p>Application No:U12345678</p></h5></center>
+<div class="container">
+   <input type="search" value="Details" id="button1"/>
+    <form >
+        <center>
+
+            <table>
+<tr>
+    <td>Type:</td>
+    <td>
+       <input type="text" name="t" placeholder="Select"  ><br><br>
+    </td>
+</tr>
+
+       <tr>
+        <td>Title:</td>
+        <td><input type="text" name="t" placeholder="Title"><br><br> </td>
+
+       </tr> 
+       <tr>
+        <td>Patent Attorney:</td>
+        <td><input type="text" name="t" placeholder="Patent Attorney:"> <br><br></td>
+       </tr> 
+       <tr>
+        <td>Assignee/Investor:</td>
+        <td><input type="text" name="t" placeholder="Assignee/Investor:"><br><br> </td>
+        
+       </tr> 
+       <tr>
+        <td>Organization:</td>
+        <td><input type="text" name="" placeholder="Organization"><br><br> </td>
+        
+       </tr> 
+
+    </center>
+</table>
+<button class="button" style="margin-top :2px; margin-right:31% ;margin-left: 70%;">Submit</button>
+    </form> 
+    
+    </div>
+    <br><br>
+    <div class="holder">
+        <form>
+            <input type="search" value="NDA" id="button1"/>
+            <br><br><center>
+                <table><tr>
+            <td>NDA completed</td>
+            <td>&nbsp;&nbsp;</td>
+            <td><input type="radio" name="t" > </td>
+            <td>&nbsp;</td>
+            <td>yes</td>
+            <td>&nbsp;&nbsp;</td>
+                <td><input type="radio" name="t" ></td>
+                <td>&nbsp;</td>
+                <td>No </td>
+                    </tr>
+                   
+                    <tr >
+                        <td><br><br>Quotation completed </td>
+                        <td><br><br>&nbsp;&nbsp;</td>
+                        <td><br><br><input type="radio" name="r" > </td>
+                        <td><br><br>&nbsp;</td>
+                        <td><br><br>yes</td>
+                        <td><br><br>&nbsp;&nbsp;</td>
+                            <td><br><br><input type="radio" name="r" ></td>
+                            <td><br><br>&nbsp;</td>
+                            <td><br><br>No<br></td>
+                            </tr>
+                                
+                                <tr>
+                                    <td><br><br>IDF completed </td>
+                                    <td><br><br>&nbsp;&nbsp;</td>
+                                    <td><br><br><input type="radio" name="u" > </td>
+                                    <td><br><br>&nbsp;</td>
+                                    <td><br><br>yes</td>
+                                    <td><br><br>&nbsp;&nbsp;</td>
+                                        <td><br><br><input type="radio" name="u" ></td>
+                                        <td><br><br>&nbsp;</td>
+                                        <td><br><br>No</td>
+                                            </tr>
+                </center>
+            </table>
+            <br><br>
+            <button class="button" style="margin-top :2px; margin-right:31% ;margin-left: 70%;">Submit</button>
+        </form>
+
+        
+    </div>
+    <br><br>
+    
+    <div class="hopper">
+        <form >
+            <input type="search" value="Patentability search" id="button1"/>
+            <center>   
+                <table>
+                    <tr>
+                        <td> <input type="text" name="t" placeholder="Patentability Type"><br><br></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="t" placeholder="Rating"><br><br></td>
+                    </tr>   
+                </table>
+                <textarea rows="8" cols="110"placeholder="&nbsp;comment"></textarea>
+            </center>
+                <input type="search" value="Deny"  id="button3"/>
+                <input type="search" value="Approve"  id="button4"/>
+                
+        </form>
+    </div>
+    <br><br>
+    <div class="liger">
+        <form >
+            <input type="search" value="Drafting" id="button1"/>
+            <center>   
+                <table>
+                    <tr>
+                        <td> Drafting completed:</td>
+                        <td>&nbsp;&nbsp;Yes/NO</td>
+                    </tr>
+                     
+                </table>
+                <br><br>
+                <textarea rows="8" cols="110" placeholder="&nbsp;comment"></textarea>
+            </center>
+                <input type="search" value="Deny"  id="button3"/>
+                <input type="search" value="Approve"  id="button4"/>
+        </form>
+    </div>
+    <br><br>
+    <div class="liger">
+        <form >
+            <input type="search" value="Drawing" id="button1"/>
+            <center>   
+                <table>
+                    <tr>
+                        <td> Drawing completed:</td>
+                        <td>&nbsp;&nbsp;Yes/NO</td>
+                    </tr>
+                     
+                </table>
+                <br><br>
+                <textarea rows="8" cols="110" placeholder="&nbsp;comment"></textarea>
+            </center>
+                <input type="search" value="Deny"  id="button3"/>
+                <input type="search" value="Approve"  id="button4"/>
+        </form>
+    </div>
+    <br><br>
+    <div class="liger">
+        <form >
+            <input type="search" value="Documentation" id="button1"/>
+            <center>   
+                <table>
+                    <tr>
+                        
+                        <td> &nbsp; Documentation completed:</td>
+                        <td> Yes/No</td>
+                    </tr>
+                    <tr>
+                        <td><br>Documentation  sent to client  :</td>
+                        
+                        <td><br><input  type="radio" name="f" >&nbsp;&nbsp;Yes</td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                            <td><br><input type="radio" name="f" >&nbsp&nbsp;No</td>
+                            
+                                </tr>
+                     
+                </table>
+                <br><br>
+                <textarea rows="8" cols="110" placeholder="&nbsp;comment"></textarea>
+            </center>
+                <input type="search" value="Deny"  id="button3"/>
+                <input type="search" value="Approve"  id="button4"/>
+        </form>
+    </div>
+<br><br>
+    <div class="hopper">
+        <form >
+            <input type="search" value="Filling" id="button1"/>
+            <center>   
+                <table>
+                    <tr>
+                        <td> <input type="number" name="t" placeholder="Patent Number"><br><br></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="t" placeholder="Filling Date"><br><br></td>
+                    </tr>   
+                </table>
+                <textarea rows="8" cols="110"placeholder="&nbsp;comment"></textarea>
+            </center>
+                <input type="search" value="Deny"  id="button3"/>
+                <input type="search" value="Approve"  id="button4"/>
+                
+        </form>
+    </div>
+    <br><br>
+    <div class="hopper">
+        <form >
+            <input type="search" value="Examination" id="button1"/>
+            <center>   
+                <table>
+                        <td> <input type="text" name="t" placeholder="Examination Date"><br><br></td>
+                    </tr>   
+                </table>
+                <textarea rows="8" cols="110"placeholder="&nbsp;comment"></textarea>
+            </center>
+                <input type="search" value="Deny"  id="button3"/>
+                <input type="search" value="Approve"  id="button4"/>
+
+                
+        </form>
+    </div>
+    <br><br>
+    <div class="hopper">
+        <form >
+            <input type="search" value="FER" id="button1"/>
+            <center>   
+                <table>
+                        <td> <input type="text" name="t" placeholder="FER Date"><br><br></td>
+                    </tr>   
+                </table>
+                <textarea rows="8" cols="110"placeholder="comment"></textarea>
+            </center>
+                <input type="search" value="Deny"  id="button3"/>
+                <input type="search" value="Approve"  id="button4"/>
+        </form>
+    </div>
+    <br><br>
+    <div class="hopper">
+        <form >
+            <input type="search" value="Hearing" id="button1"/>
+            <center>   
+                <table>
+                        <td> <input type="text" name="t" placeholder="Hearing"><br><br></td>
+                    </tr>   
+                </table>
+                <textarea rows="8" cols="110"placeholder="&nbsp;comment"></textarea>
+            </center>
+                <input type="search" value="Deny"  id="button3"/>
+                <input type="search" value="Submit"  id="button4"/>
+        </form>
+    </div>
+    <br><br>
+    <div class="hopper3">
+        <form >
+            <input type="search" value="Payment Status" id="button1"/>
+            <center>
+                   <table>
+               <tr>
+                <td><input  type="radio" name="f" >&nbsp;Full Payment</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input  type="radio" name="f" >&nbsp;Half Payment</td>
+               </tr>
+               <tr>
+                
+                <td><br><br>Amount:</td>
+
+                <td><br><br><input type="number" name="t" placeholder="Amount"></td>
+               </tr>
+                </table> 
+                <br>
+                <textarea  rows="8" cols="110"placeholder="&nbsp;comment"></textarea>
+            </center>
+               
+                <input type="search" value="Approve"  id="button6"/>
+        </form>
+    </div>
+    <br><br>
+    <div class="hopper3">
+        <br><br><br><br><br>
+        <form >
+            
+            <center>
+                   <table>
+               <tr>
+                <td>Grant:</td>
+                <td><input  type="radio" name="f" >&nbsp;&nbsp;Granted</td>
+                <td><input  type="radio" name="f" >&nbsp;&nbsp;Rejected</td>
+               </tr>
+               <tr>
+                
+                <td><br><br>Renewal Date:</td>
+
+                <td><br><br><input type="number" name="t" placeholder="Date"></td>
+               </tr>
+                </table> 
+                <br>
+                
+            </center>
+               
+                <input type="search" value="Submit"  id="button6"/>
+        </form>
+    </div>
+    
+
+</body>
+</html>
