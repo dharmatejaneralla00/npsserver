@@ -46,18 +46,25 @@ th{
     <div>
         <table align="center" style="margin-top:4%;">
             <tr >
-              <th>S.No.</th>
               <th>Application No.</th>
-              <th>Status</th>
+              <th>Patent Type</th>
+              <th>Organization</th>
+              <th>status</th>
               <th></th>
-             </tr>
-
+</tr>
+{% for i in con %}
             <tr>
-                <td>1</td>
-                <td>U20222345221</td>
-                <td>Drafting</td>
-                <td><button type="button" style="background-color: #1694d8;color: white;border-color: #1694d8;">Edit</button></td>
+                <td>{{i.uid}}</td>
+                <td>{{i.patenttype}}</td>
+                <td>{{i.organisation}}</td>
+                {% if i.status %}
+                <td style="color:green">completed</td>
+                {% else %}
+                <td style="color:red">pending</td>
+                {% endif %}
+                <td><a type="button btn-primary" style="background-color: #1694d8;padding:10px;text-decoration:none ;color: white;border-color: #1694d8;" href="{% url 'editapplication' uid=i.uid  %}" >Edit</a></td>
               </tr>
+            {% endfor %}
 
           </table>
           </div>

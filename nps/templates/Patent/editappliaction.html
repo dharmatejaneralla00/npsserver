@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title>Users</title>
+    <link rel="shortcut icon" type="image" href="img/logo.png"/>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="users.css">
+    <link rel="stylesheet" href="formtype2.css">
+    <link rel="stylesheet" href="rbox2.css">
+    <link href='https://fonts.googleapis.com/css?family=Solway' rel='stylesheet'>
+</head>
+<style>
+    .btn {
+      border: none;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-right: 70px;
+      cursor: pointer;
+    }
+    .btn6{
+    
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        font-size: 16px;
+        margin-left: 40px;
+        margin-right: 40px;
+        cursor: pointer;
+    }
+    .space{
+        margin-left: 10px;
+        margin-right: 10px;
+        
+    }
+    
+    
+    .button2 {background-color: #008CBA;} /* Blue */
+    .button3 {background-color: #f44336;} /* Red */ 
+    .button4 {background-color: #08f152; color: black;} /* Gray */ 
+    .button5 {background-color: #555555;} /* Black */
+    </style>
+<body>
+{% include 'navigation/topnavbar.html' %}
+  <center> <h2 style ="color:rgb(38, 157, 212) ">Application No:  {{app.uid }}</h2> </center>
+<center>
+   <div class="container">
+       <br>
+       <br>
+    <button style ="color:rgb(255, 255, 255) " class="but2">Details</button>
+    <br>
+       <h2 style ="color:rgb(38, 157, 212) ">Type:</h2>
+        <label for="fname"></label>
+        <input type="text" id="fname"  value="{{app.patenttype}}" placeholder="Type"><br>
+       <h2 style ="color:rgb(38, 157, 212) ">Title :</h2>
+        <label for="lname"></label>
+        <input type="text" id="lname" name="lname" placeholder=" Title" value="{{app.title}}"><br>
+       <h2 style ="color:rgb(38, 157, 212) "> organization :</h2>
+        <input type="text" id="fname" name="" value="{{app.organisation}}" placeholder="Organization"><br>
+  <br>
+  <br>
+   </div></center>
+</center>
+<br>
+<br>
+<center>
+    {% if app.patenttype == 'full' %}
+    <div class="container2">
+        <br>
+        <br>
+     <button style ="color:rgb(255, 255, 255) " class="but2">NDA</button>
+        <form action="#">
+            <p>
+              
+              <h3 style ="color:rgb(38, 157, 212) ">NDA Completed:  <input type="radio" id="test1" name="radio-group" checked>
+              <label for="test1">Yes</label>
+              
+              <input type="radio" id="test2" name="radio-group">
+              <label for="test2">No</label> </h3>
+              <br>
+              <br>
+              <h3 style ="color:rgb(38, 157, 212) ">Quotation Completed:  <input type="radio" id="test1" name="radio-group" checked>
+                <label for="test3">Yes</label>
+                
+                <input type="radio" id="test3" name="radio-group">
+                <label for="test4">No</label> </h3>
+                <br>
+              <br>
+              <h3 style ="color:rgb(38, 157, 212) ">IDF Completed:  <input type="radio" id="test1" name="radio-group" checked>
+                <label for="test5">Yes</label>
+                
+                <input type="radio" id="test4" name="radio-group">
+                <label for="test6">No</label> </h3>
+            </p>
+            
+          </form>
+    </div>
+    {% endif %}
+</center>
+<br>
+<br>
+<center>
+      {% if app.patenttype == 'full' or app.patenttype == 'novelty' %}
+    <div class="container">
+        <br>
+        <br>
+     <button style ="color:rgb(255, 255, 255) " class="but2">Patentablity Search</button>
+     <br>
+     <br>
+     <label for="fname"></label>
+    <input type="text" id="fname" name="" placeholder="Patentablity Type"><br>
+    <label for="lname"></label>
+    <input type="text" id="lname" name="lname" placeholder="Rating"><br>
+    <br>
+    <textarea name="" class="box" placeholder="comments"  cols="30" rows="5"></textarea>
+    <br>
+    <button class="btn6 button4">Approve</button>
+<button class="btn6 button3">Deny</button>
+    </div>
+      {% endif %}
+</center>
+<br>
+<br>
+<center>
+    {% if app.patenttype == 'full' or app.patenttype == 'drafting' %}
+    <div class="container">
+        <br>
+        <br>
+     <button style ="color:rgb(255, 255, 255) " class="but2">Drafting</button>
+    
+    <br>
+        <form action="#">
+            <p>
+              
+              <h3 style ="color:rgb(38, 157, 212) ">Drafting Completed:  <input type="radio" id="test1" name="radio-group" checked>
+              <label for="test1">Yes</label>
+              
+              <input type="radio" id="test2" name="radio-group">
+              <label for="test2">No</label> </h3>
+            </p>
+            
+        </form>
+        <br>
+        <textarea name="" class="box" placeholder="comments" id="" cols="30" rows="5"></textarea>
+        <br>
+        <button class="btn6 button4">Approve</button>
+    <button class="btn6 button3">Deny</button>
+        {% endif %}
+    </div>
+   
+</center>
+<br>
+<br>
+<center>
+    {% if app.patenttype == 'full' or app.patenttype == 'drawing' %}
+    <div class="container">
+        <br>
+        <br>
+     <button style ="color:rgb(255, 255, 255) " class="but2">Drawing</button>
+    
+    <br>
+        <form action="#">
+            <p>
+              
+              <h3 style ="color:rgb(38, 157, 212) ">Drawing Completed:  <input type="radio" id="test1" name="radio-group" checked>
+              <label for="test1">Yes</label>
+              
+              <input type="radio" id="test2" name="radio-group">
+              <label for="test2">No</label> </h3>
+            </p>
+            
+        </form>
+        <br>
+        <textarea name="" class="box" placeholder="comments" id="" cols="30" rows="5"></textarea>
+        <br>
+        <button class="btn6 button4">Approve</button>
+    <button class="btn6 button3">Deny</button>
+    </div>
+   {% endif %}
+</center>
+<br>
+<br>
+<center>
+    {% if app.patenttype == 'full' or app.patenttype == 'documentation' %}
+    <div class="container">
+        <br>
+        <br>
+     <button style ="color:rgb(255, 255, 255) " class="but2">Documentation</button>
+    
+    <br>
+        <form action="#">
+            <p>
+              
+              <h3 style ="color:rgb(38, 157, 212) ">Documentation Completed:  <input type="radio" id="test1" name="radio-group" checked>
+              <label for="test1">Yes</label>
+              
+              <input type="radio" id="test2" name="radio-group">
+              <label for="test2">No</label> </h3>
+            </p>
+            
+        </form>
+        <br>
+        <textarea name="" class="box" placeholder="comments" id="" cols="30" rows="5"></textarea>
+        <br>
+        <button class="btn6 button4">Approve</button>
+    <button class="btn6 button3">Deny</button>
+    </div>
+    {% endif %}
+</center>
+<br>
+<br>
+<center>
+    {% if app.patenttype == 'full' or app.patenttype == 'filing' %}
+    <div class="container">
+        <br>
+        <br>
+     <button style ="color:rgb(255, 255, 255) " class="but2">Filing</button>
+    
+     <form>
+        <h2 style ="color:rgb(38, 157, 212) ">
+        <label for="fname"></label>
+        <input type="text" id="fname" name="" placeholder="Patent Number"><br> </h2>
+        <h2 style ="color:rgb(38, 157, 212) ">
+        <label for="lname"></label>
+        <input type="text" id="lname" name="lname" placeholder="Filing"><br> </h2>
+        </form>
+        <textarea name="" class="box" placeholder="comments" id="" cols="30" rows="5"></textarea>
+        <br>
+        <button class="btn6 button4">Approve</button>
+    <button class="btn6 button3">Deny</button>
+    </div>
+    {% endif %}
+</center>
+<br>
+<br>
+<center>
+    {% if app.patenttype == 'full' or app.patenttype == 'examination' %}
+    <div class="container">
+        <br>
+        <br>
+     <button style ="color:rgb(255, 255, 255) " class="but2">Examination</button>
+    
+     <form>
+        <h2 style ="color:rgb(38, 157, 212) ">
+        <label for="fname"></label>
+        <input type="text" id="fname" name="" placeholder="Examination Date"><br> </h2>
+        <h2 style ="color:rgb(38, 157, 212) ">
+        </form>
+        <textarea name="" class="box" placeholder="comments" id="" cols="30" rows="5"></textarea>
+        <br>
+        <button class="btn6 button4">Approve</button>
+    <button class="btn6 button3">Deny</button>
+    </div>
+    {% endif %}
+</center>
+<br>
+<br>
+<center>
+    {% if app.patenttype == 'full' or app.patenttype == 'filing' %}
+    <div class="container">
+        <br>
+        <br>
+     <button style ="color:rgb(255, 255, 255) " class="but2">FER</button>
+    
+     <form>
+        <h2 style ="color:rgb(38, 157, 212) ">
+        <label for="fname"></label>
+        <input type="text" id="fname" name="" placeholder="FER Date"><br> </h2>
+        <h2 style ="color:rgb(38, 157, 212) ">
+        </form>
+        <textarea name="" class="box" placeholder="comments" id="" cols="30" rows="5"></textarea>
+        <br>
+        <button class="btn6 button4">Approve</button>
+    <button class="btn6 button3">Deny</button>
+    </div>
+    {% endif %}
+</center>
+<br>
+<br>
+<center>
+    {% if app.patenttype == 'full' or app.patenttype == 'hearing' %}
+    <div class="container">
+        <br>
+        <br>
+     <button style ="color:rgb(255, 255, 255) " class="but2">Hearing</button>
+    
+     <form>
+         <h2 style ="color:rgb(38, 157, 212) "></h2>
+        <label for="fname"></label>
+        <input type="text" id="fname" name="" placeholder="Hearing Date"><br> </h2>
+         <h2 style ="color:rgb(38, 157, 212) "></h2>
+        </form>
+        <textarea name="" class="box" placeholder="comments" id="" cols="30" rows="5"></textarea>
+        <br>
+        <button class="btn6 button4">Approve</button>
+    <button class="btn6 button3">Deny</button>
+    </div>
+    {% endif %}
+</center>
+
+<center>
+    <div class="container">
+     <button style ="color:rgb(255, 255, 255) " class="but2">Payment status</button>
+     <br>
+     <br>
+     {% if status.paymentstatus %}
+        <h3 style="color:green;">Payment Recieved</h3>
+        {% else %}
+        <h3 style="color:red;">not recieved</h3>
+        {% endif %}
+    </div>
+</center>
+<br>
+<br>
+<center>
+    <div class="container2">
+        <br>
+        <br>
+
+     <br>
+     <form action="#">
+        <p>
+          
+          <h3 style ="color:rgb(38, 157, 212) "> Grant :<input type="radio" id="test1" name="radio-group" checked>
+          <label for="test1"> Granted</label>
+          
+          <input type="radio" id="test2" name="radio-group">
+          <label for="test2">Rejected</label> </h3>
+        
+        </p>
+        
+      </form>
+      <br>
+      <br>
+    </div>
+</center>
+
+</body>
+</html> 
