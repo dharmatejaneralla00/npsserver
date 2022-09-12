@@ -20,5 +20,5 @@ def Designtableview(r):
     c = Design.objects.all()
     return render(r,"Design/Designtable.html",{'c':c})
 
-def Designstatusview(r):
+def Designstatusview(r,uid):
     return render(r,"Design/Designstatus.html")

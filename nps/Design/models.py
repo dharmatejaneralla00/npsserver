@@ -17,6 +17,11 @@ class Design(models.Model):
 
 class Designstatus(models.Model):
     uid = models.CharField(max_length=20)
+    quotationstatus = models.CharField(max_length=20)
+    quotedamount = models.CharField(max_length=20)
+    toassignteam = models.CharField(max_length=20)
+    projectduedate = models.CharField(max_length=20)
+    designcompleted = models.BooleanField(max_length=20)
 
     def __str__(self):
         return self.uid
