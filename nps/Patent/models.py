@@ -18,7 +18,16 @@ class Patentapplication(models.Model):
         return self.uid
 
 
-class ApplicationStatus(models.Model):
+
+class PaymentStatus(models.Model):
     status = models.BooleanField(default=False)
     uid = models.CharField(max_length=20)
-    paymentstatus = models.BooleanField(default=False)
+    amount = models.CharField(max_length=10)
+    def __str__(self):
+        return self.uid
+
+class NDAStatus(models.Model):
+    status = models.BooleanField(default=False)
+    uid = models.CharField(max_length=20)
+    nda = models.CharField(max_length=20)
+
