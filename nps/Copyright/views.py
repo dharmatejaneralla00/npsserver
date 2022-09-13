@@ -6,7 +6,7 @@ def Copyrighttableview(r):
     c = Copyright.objects.all()
     return render(r,"copyright/Copyrighttable.html",{'c':c})
 
-def Copyrightstatusview(r):
+def Copyrightstatusview(r,uid):
     return render(r,"copyright/Copyrightstatus.html")
 
 def Copyrightapplicationview(request):

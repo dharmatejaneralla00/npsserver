@@ -40,6 +40,8 @@
       .button2 {
         background-color: rgb(23, 151, 66); 
         color: rgb(250, 249, 249); 
+        position: relative;
+        left: 30px;
         
       }
       
@@ -116,7 +118,7 @@
     }
     tr:hover {background-color: rgb(248, 244, 242);}
       .but2 {
-        background-color: #0d9bd3; /* Green */
+        background-color: #0d9bd3; 
         border: none;
         color: white;
         padding: 12px 72px;
@@ -190,7 +192,21 @@
           opacity: 1;
           -webkit-transform: scale(1);
           transform: scale(1);
-      }</style>
+      }
+      input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-color: #1694d8;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  ::placeholder{
+    color: black;
+  }
+  </style>
 </head>
 
 {% include 'navigation/topnavbar.html' %}
@@ -210,6 +226,22 @@
           
           <br>
           <br>
+          <form action="/action_page.php">
+            <select id="Quotation status" name="Quotation status">
+              <option value="Quotation status" hidden>Quotation status</option>
+              <option value="Quotation sent">Quotation sent</option>
+              <option value="Agreed quotation">Agreed quotation</option>
+              <option value="PO Released">PO Released</option>
+            </select>
+          
+            <input type="text" id="fname" name="firstname" placeholder="Quoted amount"><br>
+            <select id="To assign team" name="To assign team">
+              <option value="To assign team" hidden>To assign team</option>
+              <option value="CR Admin">CR Admin</option>
+              <option value="Others">Others</option>
+            </select>
+          
+            <input type="text" id="fname" name="firstname" placeholder="Project due date"><br>
           <form action="#">
             <p>
               
@@ -224,7 +256,9 @@
           </form>
           <br>
           <br>
-        <textarea name="" class="box" placeholder="comments" id="" cols="20" rows="10"></textarea>
+          <br>
+          <br>
+        
         <br>
         <br>
         <br>

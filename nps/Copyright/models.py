@@ -10,7 +10,20 @@ class Copyright(models.Model):
     referedby = models.IntegerField()
     conntactnumber = models.CharField(max_length=20)
     emailid = models.EmailField(max_length=20)
-    uid = models.CharField(max_length=20)
+    uid=models.CharField(max_length=20)
 
     def __str__(self):
-        return self.title
+      return self.title
+
+
+class Copyrightstatus(models.Model):
+    uid = models.CharField(max_length=20)
+    quotationstatus = models.CharField(max_length=20)
+    quotedamount = models.CharField(max_length=20)
+    toassignteam = models.CharField(max_length=20)
+    projectduedate = models.CharField(max_length=20)
+    copyrightcompleted = models.BooleanField(max_length=20)
+
+
+    def __str__(self):
+        return self.uid
