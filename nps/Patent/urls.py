@@ -1,8 +1,8 @@
 from django.urls import path
 from . import views
 urlpatterns=[
-    path("fullpatentapplication",views.FullPatentapplicationview),
-    path("patentapplication",views.Patentapplicationview),
+    path("fullpatentapplication",views.FullPatentapplicationview,name ='fullpatentapplication'),
+    path("patentapplication",views.Patentapplicationview,name = 'patentapplication'),
     path("documentationstatus/<str:uid>'",views.Documentationstatusview),
     path("documentationtable",views.Documentationtableview),
     path("draftingstatus/<str:uid>'",views.Draftingstatusview),

@@ -9,7 +9,7 @@ from . import models
 
 
 def loginuser(r):
-    # if not r.user.is_authenticated:
+    if not r.user.is_authenticated:
         if r.method == 'POST':
             username = r.POST['username']
             password = r.POST['password']
@@ -25,13 +25,21 @@ def loginuser(r):
                     return redirect('adminpanel')
             else:
                 messages.error(r, "user not found")
-        return render(r, 'user/login.html')
+            return render(r, 'user/login.html')
+    else:
+        username = r.user.username
+        userModel = models.Usermodel.objects.get(username=username)
+        team = userModel.teamname
+        if team == 'admin':
+            print('admin')
+            return redirect('adminpanel')
+    return render(r, 'user/login.html')
 
 
 def registeruser(request):
     context = models.TeamModels.objects.all()
     if request.method == 'POST':
-        email = request.POST['email']
+        email = request.POST['username']
         name = request.POST['name']
         password = request.POST['password']
         team = request.POST['team']
@@ -41,8 +49,8 @@ def registeruser(request):
             user.save()
             user_auth = authenticate(username=email, password=password)
             login(request, user_auth)
-            models.Usermodel(username=email, team=team, name=name).save()
-            return redirect('home')
+            models.Usermodel(username=email, teamname=team, name=name).save()
+            return redirect('buser/displayuser')
         else:
             messages.error(request, "email already exists login to continue")
             return redirect('user/register')
@@ -51,7 +59,7 @@ def registeruser(request):
 
 def logoutuser(request):
     logout(request)
-    return redirect('login')
+    return redirect('user/login')
 
 
 def displayuser(r):
@@ -60,11 +68,13 @@ def displayuser(r):
 
 
 def resetpassword(r, username):
+    c = username
     if r.method == 'POST':
-        user = User.objects.get(username=username)
         newpass = r.POST['password']
-        user.set_password(newpass)
-        user.save()
+        username1 = r.POST['username']
+        u = User.objects.get(username=username1)
+        u.set_password(newpass)
+        u.save()
         messages.success(r, "password reset successfully")
-        return redirect('users/')
-    return render(r, 'users/resetpassword.html')
+        return redirect('user/displayuser')
+    return render(r, 'user/resetpassword.html',{'c':c})

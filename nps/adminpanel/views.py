@@ -23,3 +23,5 @@ def ndsatatus(r,uid):
         nda(status = True,uid = uid,nda = status).save()
         return redirect('editapplication/'+uid)
 
+def dashboard(r):
+    return  redirect()

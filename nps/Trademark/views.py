@@ -13,8 +13,7 @@ def Trademarkapplicationview(request):
         r = Trademark(title=title, organization=organization, resource=resource, referedBy=referedby
                                   , contactnumber=contactnumber, email=emailid)
         r.save()
-    else:
-          return render(request,"Trademark/Trademarkapplication.html")
+    return render(request,"Trademark/Trademarkapplication.html")
 
 def Trademarkstatusview(r,uid):
     c = Trademark.objects.all()

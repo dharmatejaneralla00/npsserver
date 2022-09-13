@@ -18,16 +18,94 @@ class Patentapplication(models.Model):
         return self.uid
 
 
-
 class PaymentStatus(models.Model):
     status = models.BooleanField(default=False)
     uid = models.CharField(max_length=20)
     amount = models.CharField(max_length=10)
+
     def __str__(self):
         return self.uid
+
 
 class NDAStatus(models.Model):
     status = models.BooleanField(default=False)
     uid = models.CharField(max_length=20)
     nda = models.CharField(max_length=20)
 
+    def __str__(self):
+        return self.uid
+
+
+class NoveltyStatus(models.Model):
+    status = models.BooleanField(default=False)
+    uid = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.uid
+
+
+class DraftingStatus(models.Model):
+    status = models.BooleanField(default=False)
+    uid = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.uid
+
+
+class DrawingStatus(models.Model):
+    status = models.BooleanField(default=False)
+    uid = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.uid
+
+
+class DocumentationStatus(models.Model):
+    status = models.BooleanField(default=False)
+    uid = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.uid
+
+
+class FilingStatus(models.Model):
+    status = models.BooleanField(default=False)
+    uid = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.uid
+
+
+class ExaminationSatus(models.Model):
+    status = models.BooleanField(default=False)
+    uid = models.CharField(max_length=20)
+    date = models.DateField()
+
+    def __str__(self):
+        return self.uid
+
+
+class FerStatus(models.Model):
+    status = models.BooleanField(default=False)
+    uid = models.CharField(max_length=20)
+    date = models.DateField()
+
+    def __str__(self):
+        return self.uid
+
+
+class HearingStatus(models.Model):
+    status = models.BooleanField(default=False)
+    uid = models.CharField(max_length=20)
+    date = models.DateField()
+
+    def __str__(self):
+        return self.uid
+
+
+class GrantsStatus(models.Model):
+    status = models.BooleanField(default=False)
+    uid = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.uid

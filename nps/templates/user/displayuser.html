@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+
+{% include 'navigation/topnavbar.html' %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -107,8 +110,9 @@
 </head>
 <body>
 <!--user button-->
+<center>
 <p><a  class="button buttonsub1" href="users">USERS</a> <big><big><big></big></big></big></p>
-   <a class="gap" href="newuserapplication"><h3 style="color:white;">Create New User</h3></a>
+   <a class="gap" href="register"><h3 style="color:white;">Create New User</h3></a>
     <br>
 <!-- table -->
     <br>
@@ -131,5 +135,6 @@
 {% for i in messages %}
 {{i}}
 {% endfor %}
+</center>
 </body>
 </html>

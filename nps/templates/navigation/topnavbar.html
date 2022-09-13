@@ -77,10 +77,10 @@ nav ul li a{
 
 <a class="heading" href="" style="color:blue;">Novel Patent Services</a>
         <ul class="hover-underline-animation">
-            <li><a class="nav-link nav-link-fade-up" href="home">Dashboard</a></li>
-            <li><a class="nav-link nav-link-fade-up" href="courses">Users</a></li>
-            <li><a class="nav-link nav-link-fade-up" href="#" style="">Hi  <span style="color:blue;text-tranform:uppercase; ">{{user.username}} </span></a></li>
-            <li><a class="nav-link nav-link-fade-up" href="">Logout</a></li>
+            <li><a class="nav-link nav-link-fade-up" href='{% url "user/login" %}'>Dashboard</a></li>
+            <li><a class="nav-link nav-link-fade-up" href="{% url 'user/displayuser' %}">Users</a></li>
+            <li><a class="nav-link nav-link-fade-up" href="" style="">Hi  <span style="color:blue;text-tranform:uppercase; ">{{user.username}} </span></a></li>
+            <li><a class="nav-link nav-link-fade-up" href="{% url 'user/logout' %}">Logout</a></li>
 
         </ul>
     </nav>
