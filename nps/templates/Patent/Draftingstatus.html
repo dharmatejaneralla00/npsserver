@@ -204,31 +204,30 @@
           <br>
           <br>
           <br>
-          <h2 style ="color:rgb(38, 157, 212) ">Application No: U12345678</h2>
+          <h2 style ="color:rgb(38, 157, 212) ">Application No: {{ c.uid }}</h2>
           
           <br>
           <br>
           <form action="#">
             <p>
               
-              <h3 style ="color:rgb(38, 157, 212);font-size: x-large; ">Drafting Completed: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="test1" name="radio-group" checked>
+              <h3 style ="color:rgb(38, 157, 212);font-size: x-large; ">Drafting Completed: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="test1" name="draftingcompleted" checked value="completed">
               <label for="test1">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               
-              <input type="radio" id="test2" name="radio-group">
+              <input type="radio" id="test2" name="draftingcompleted" value="not">
               <label for="test2">No</label> </h3>
             
             </p>
-            
+            <button  class="button button2" type="submit">SUBMIT</button>
           </form>
           <br>
           <br>
-        <textarea name="" class="box" placeholder="comments" id="" cols="20" rows="10"></textarea>
         <br>
         <br>
         <br>
         <br>
         <br>
-        <button  class="button button2">SUBMIT</button>
+
           
       
       </div>

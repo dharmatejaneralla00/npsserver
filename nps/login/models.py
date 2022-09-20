@@ -17,3 +17,9 @@ class TeamModels(models.Model):
 
     def __str__(self):
         return self.team
+
+class referdby(models.Model):
+    names = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.names

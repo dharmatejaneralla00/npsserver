@@ -59,7 +59,6 @@
         
           <input type="text" id="fname" name="clientname" placeholder="Client Name"><br>
           <input type="text" id="fname" name="titleofwork" placeholder="Title of work"><br>
-          <input type="text" id="fname" name="referedby" placeholder="Ref.By"><br>
 
           <select id="mode of contact" name="modeofcontact">
             <option value="mode of contact" hidden>Mode of contact</option>
@@ -68,8 +67,9 @@
           </select>
           <select id="Refered By" name="referedby">
             <option value="Refered By" hidden>Refered by</option>
-            <option value="siri">siri</option>
-            <option value="others">others</option>
+             {% for i in ref %}
+              <option value="{{i}}">{{i}}</option>
+              {% endfor %}
           </select>
           <input type="text" id="fname" name="contactnumber" placeholder="Contact Number"><br>
           <input type="text" id="fname" name="emailid" placeholder="Email Id"><br>

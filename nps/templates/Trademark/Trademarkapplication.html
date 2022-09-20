@@ -46,7 +46,7 @@
         <li style="color:#1694d8; margin-left:270px;font-weight: bolder;">TRADEMARK APPLICATION</li>
     </ul><br>
     <center><div >
-        <form action="/action_page.php">
+        <form action="trademarkapplication">
           <select id="Category of work" name="categoryofwork">
             <option value="Category of work" hidden>Category of work</option>
             <option value="Lituratic">Lituratic</option>
@@ -65,8 +65,9 @@
           </select>
           <select id="Refered By" name="referedby">
             <option value="Refered By" hidden>Refered by</option>
-            <option value="siri">siri</option>
-            <option value="others">others</option>
+             {% for i in ref %}
+              <option value="{{i}}">{{i}}</option>
+              {% endfor %}
           </select>
           <input type="text" id="fname" name="contactnumber" placeholder="Contact Number"><br>
           <input type="text" id="fname" name="emailid" placeholder="Email Id"><br>

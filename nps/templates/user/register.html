@@ -47,7 +47,7 @@ div {
 </style>
 <body>
 {% include 'navigation/topnavbar.html' %}
-        <span style="color:#1694d8;margin-left: 350px;"><h3 >New User</h3>
+            <p><a  class="button buttonsub1" href="users">USERS</a> <big><big><big></big></big></big></p>
         </span><div>
             <form action="register" method="post">
                 {% csrf_token %}
@@ -60,7 +60,7 @@ div {
                     {% for i in con %}
             <option value="{{i}}">{{i}}</option>
                     {% endfor %}
-          </select>
+          </select><br>
                 <button class="button">Submit</button></form>
     {% for i in messages %}
     {{i}}

@@ -53,6 +53,7 @@
             <label> Novelity Search</label>&ensp;&ensp;
             <input type="checkbox" id="Documentation" name="check[]" value="documentation">
             <label for="Documentation">Documentation</label>&ensp;&ensp;
+            <br>
           <input type="text" id="fname" name="title" placeholder="Title"><br>
           <input type="text" id="fname" name="organization" placeholder="Organization"><br>
           <select id="mode of contact" name="modeofcontact">
@@ -62,8 +63,9 @@
           </select>
           <select id="Refered By" name="referedby">
             <option value="Refered By" hidden>Refered by</option>
-            <option value="siri">siri</option>
-            <option value="others">others</option>
+             {% for i in ref %}
+              <option value="{{i}}">{{i}}</option>
+              {% endfor %}
           </select>
           <input type="text" id="fname" name="contactnumber" placeholder="Contact Number"><br>
           <input type="text" id="fname" name="emailid" placeholder="email id"><br>

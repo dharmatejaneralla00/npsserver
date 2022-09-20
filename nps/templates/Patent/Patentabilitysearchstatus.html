@@ -221,18 +221,16 @@
           <br>
           <br>
           <br>
-          <h2 style ="color:rgb(38, 157, 212) ">Application No: U12345678</h2>
+          <h2 style ="color:rgb(38, 157, 212) ">Application No: {{ c.uid }}</h2>
           
           <br>
           <br>
-          <textarea  class="box2" placeholder="Status" style=></textarea><br>
-          <textarea  class="box2" placeholder="Rating" style=></textarea>
+        <form action="" method="post">
+          <input  class="box2" placeholder="Rating out of 5" name="uid" value="{{c.id}}">
+          <input  class="box2" placeholder="Rating out of 5" name="rating">
           <br>
           <br>
-        <textarea name="" class="box" placeholder="comments" id="" cols="20" rows="10"></textarea>
-        <br>
-        <br>
-        <br>
+        <button  type="submit" class="button2">completed</button>
         <br>
         <br>
         <button  class="button button2">SUBMIT</button>

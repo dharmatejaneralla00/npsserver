@@ -1,3 +1,4 @@
+from django.apps import apps
 from django.shortcuts import render, redirect
 from .models import Copyright
 
@@ -10,12 +11,13 @@ def Copyrightstatusview(r,uid):
     return render(r,"copyright/Copyrightstatus.html")
 
 def Copyrightapplicationview(request):
+    referedby = apps.get_model('login', 'referdby')
     if request.method == 'POST':
-        categoryofwork = request.POST['title']
-        clientname = request.POST['organization']
-        titleofwork = request.POST['resource']
+        categoryofwork = request.POST['categoryofwork']
+        clientname = request.POST['clientname']
+        titleofwork = request.POST['titleofwork']
         referedby = request.POST['referedby']
-        modeofcontact = request.POST['contactnumber']
+        modeofcontact = request.POST['modeofcontact']
         contactnumber = request.POST['contactnumber']
         emailid = request.POST['emailid']
         r = Copyright(categoryofwork=categoryofwork, clientname=clientname, titleofwork=titleofwork, referedBy=referedby
@@ -23,4 +25,4 @@ def Copyrightapplicationview(request):
         r.save()
         return redirect('home')
     else:
-        return render(request,"copyright/Copyrightapplication.html")
+        return render(request,"copyright/Copyrightapplication.html",{'ref':referedby.objects.all})

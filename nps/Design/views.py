@@ -1,8 +1,10 @@
+from django.apps import apps
 from django.shortcuts import render, redirect
 from .models import Design
 
 # Create your views here.
 def Designapplicationview(request):
+    referedby = apps.get_model('login', 'referdby')
     if request.method == 'POST':
         categoryofwork = request.POST['categoryofwork']
         clientname = request.POST['clientname']
@@ -16,7 +18,7 @@ def Designapplicationview(request):
         r.save()
         return redirect('users/login')
     else:
-         return render(request,"Design/Designapplication.html")
+         return render(request,"Design/Designapplication.html",{'ref':referedby.objects.all})
 
 def Designtableview(r):
     c = Design.objects.all()

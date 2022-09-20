@@ -1,8 +1,10 @@
+from django.apps import apps
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
 from . import models
+
 
 
 # Create your views here.
@@ -23,6 +25,30 @@ def loginuser(r):
                 if team == 'admin':
                     print('admin')
                     return redirect('adminpanel')
+                elif team =='drawing':
+                    c = apps.get_model('Patent','Patentapplication')
+                    ro = c.objects.all()
+                    return render(r,'Patent/Drawingtable.html',{'r':ro})
+                elif team =='drafting':
+                    c = apps.get_model('Patent','Patentapplication')
+                    ro = c.objects.all()
+                    return render(r,'Patent/Draftingtable.html',{'r':ro})
+                elif team =='documentation':
+                    c = apps.get_model('Patent','Patentapplication')
+                    ro = c.objects.all()
+                    return render(r,'Patent/Documentationtable.html',{'r':ro})
+                elif team =='noveltysearch':
+                    c = apps.get_model('Patent','Patentapplication')
+                    ro = c.objects.all()
+                    return render(r,'Patent/Patentabilitysearchtable.html',{'r':ro})
+                elif team =='trademark':
+                    return redirect('trademark/table')
+                elif team =='design':
+                    return redirect('design/table')
+                elif team =='copyright':
+                    return redirect('copyright/table')
+                else:
+                    return redirect('user/login')
             else:
                 messages.error(r, "user not found")
             return render(r, 'user/login.html')
@@ -50,7 +76,7 @@ def registeruser(request):
             user_auth = authenticate(username=email, password=password)
             login(request, user_auth)
             models.Usermodel(username=email, teamname=team, name=name).save()
-            return redirect('buser/displayuser')
+            return redirect('user/displayuser')
         else:
             messages.error(request, "email already exists login to continue")
             return redirect('user/register')
@@ -77,4 +103,14 @@ def resetpassword(r, username):
         u.save()
         messages.success(r, "password reset successfully")
         return redirect('user/displayuser')
-    return render(r, 'user/resetpassword.html',{'c':c})
+    return render(r, 'user/resetpassword.html', {'c': c})
+
+
+def referedby(r):
+    c = models.referdby.objects.all()
+    if r.method == "POST":
+        name = r.POST['names']
+        r = models.referdby(names=name)
+        r.save()
+        return render(r, 'user/refered.html', {'c': c})
+    return render(r, 'user/refered.html', {'c': c})
