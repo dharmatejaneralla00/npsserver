@@ -3,11 +3,11 @@ from django.db import models
 
 # Create your models here.
 class Copyright(models.Model):
-    title = models.CharField(max_length=20)
-    organisation = models.CharField(max_length=30)
-    resource = models.IntegerField()
-    modeofcontact = models.EmailField(max_length=50)
+    categoryofwork = models.CharField(max_length=20)
+    clientname = models.CharField(max_length=30)
+    titleofwork = models.IntegerField()
     referedby = models.IntegerField()
+    modeofcontact = models.EmailField(max_length=50)
     conntactnumber = models.CharField(max_length=20)
     emailid = models.EmailField(max_length=20)
     uid=models.CharField(max_length=20)

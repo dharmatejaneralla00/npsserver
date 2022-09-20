@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Copyright
 
 # Create your views here.
@@ -11,14 +11,16 @@ def Copyrightstatusview(r,uid):
 
 def Copyrightapplicationview(request):
     if request.method == 'POST':
-        title = request.POST['title']
-        organization = request.POST['organization']
-        resource = request.POST['resource']
+        categoryofwork = request.POST['title']
+        clientname = request.POST['organization']
+        titleofwork = request.POST['resource']
         referedby = request.POST['referedby']
+        modeofcontact = request.POST['contactnumber']
         contactnumber = request.POST['contactnumber']
         emailid = request.POST['emailid']
-        r = Copyright(title=title, organization=organization, resource=resource, referedBy=referedby
-                                  , contactnumber=contactnumber, email=emailid)
+        r = Copyright(categoryofwork=categoryofwork, clientname=clientname, titleofwork=titleofwork, referedBy=referedby
+                                  ,modeofcontact=modeofcontact, contactnumber=contactnumber, email=emailid)
         r.save()
+        return redirect('home')
     else:
         return render(request,"copyright/Copyrightapplication.html")

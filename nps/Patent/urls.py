@@ -10,6 +10,5 @@ urlpatterns=[
     path("drawingstatus/<str:uid>'",views.Drawingstatusview),
     path("drawingtable",views.Drawingtableview),
     path("patentabilitysearchstatus/<str:uid>'",views.Patentabilitysearchstatusview),
-    path("patentabilitysearchtable",views.Patentabilitysearchtableview),
-    path("editapplication",views.Editapplicationview),
+    path("patentabilitysearchtable",views.Patentabilitysearchtableview)
 ]

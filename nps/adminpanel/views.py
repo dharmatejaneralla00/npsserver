@@ -12,16 +12,77 @@ def adminpanel(r):
 def Editapplication(r, uid):
     patent = apps.get_model('Patent', 'Patentapplication')
     patent = patent.objects.get(uid=uid)
-    paymentstatus = apps.get_model('Patent','PaymentStatus')
     nda = apps.get_model('Patent', 'NDAStatus')
-    return render(r, 'Patent/editappliaction.html', {'app': patent, 'paymentstatus':paymentstatus.objects.get(uid=uid)})
+    paymentstatus = apps.get_model('Patent', 'PaymentStatus')
+    DocumentationStatus = apps.get_model('Patent', 'DocumentationStatus')
+    NoveltyStatus = apps.get_model('Patent', 'NoveltyStatus')
+    DraftingStatus = apps.get_model('Patent', 'DraftingStatus')
+    ExaminationSatus = apps.get_model('Patent', 'ExaminationSatus')
+    DrawingStatus = apps.get_model('Patent', 'DrawingStatus')
+    FilingStatus = apps.get_model('Patent', 'FilingStatus')
+    FerStatus = apps.get_model('Patent', 'FerStatus')
+    HearingStatus = apps.get_model('Patent', 'HearingStatus')
+    GrantsStatus = apps.get_model('Patent', 'GrantsStatus')
+    context = {'app': patent, 'paymentstatus': paymentstatus.objects.filter(uid=uid),
+               'ndastatus': nda.objects.get(uid=uid)}
+    if patent.patenttype == 'full':
+        c = {'GrantsStatus': GrantsStatus.objects.get(uid=uid),
+             'DocumentationStatus': DocumentationStatus.objects.get(uid=uid),
+             'FerStatus': FerStatus.objects.get(uid=uid), 'NoveltyStatus': NoveltyStatus.objects.get(uid=uid),
+             'DraftingStatus': DraftingStatus.objects.get(uid=uid),
+             'FilingStatus': FilingStatus.objects.get(uid=uid),
+             'DrawingStatus': DrawingStatus.objects.get(uid=uid),
+             'HearingStatus': HearingStatus.objects.get(uid=uid),
+             'ExaminationSatus': ExaminationSatus.objects.get(uid=uid)}
+    elif patent.patenttype == 'novelty search':
+        c = {'NoveltyStatus': NoveltyStatus.objects.get(uid=uid)}
+    elif patent.patenttype == 'drafting':
+        c = {'DraftingStatus': DraftingStatus.objects.get(uid=uid)}
+    elif patent.patenttype == 'drawing':
+        c = {'DrawingStatus': DrawingStatus.objects.get(uid=uid)}
+    elif patent.patenttype == 'documentation':
+        c = {'DocumentationStatus': DocumentationStatus.objects.get(uid=uid)}
+    elif patent.patenttype == 'filing':
+        c = {'FilingStatus': FilingStatus.objects.get(uid=uid)}
+    elif patent.patenttype == 'examination':
+        c = {'ExaminationSatus': ExaminationSatus.objects.get(uid=uid)}
+    elif patent.patenttype == 'FER':
+        c = {'FerStatus': FerStatus.objects.get(uid=uid), }
+    elif patent.patenttype == 'hearing':
+        c = {'HearingStatus': HearingStatus.objects.get(uid=uid)}
+    co = {**context, **c}
+    return render(r, 'Patent/editappliaction.html', co)
 
-def ndsatatus(r,uid):
-    nda = apps.get_model('Patent','NDAStatus')
-    if r.method == 'POSt':
+
+def ndsatatus(r):
+    nda = apps.get_model('Patent', 'NDAStatus')
+    if r.method == 'POST':
+        uid = r.POST['uid']
         status = r.POST['status']
-        nda(status = True,uid = uid,nda = status).save()
-        return redirect('editapplication/'+uid)
+        ndas = nda.objects.get(uid=uid)
+        ndas.status = True
+        ndas.nda = status
+        ndas.save()
+        return redirect('user/login')
+
+
+def filingstatus(r):
+    FilingStatus = apps.get_model('Patent', 'FilingStatus')
+    if r.method == 'POST':
+        uid = r.POST['uid']
+        sta = FilingStatus.objects.get(uid=uid)
+        sta.status = True
+        sta.save()
+        return redirect('user/login')
 
 def dashboard(r):
-    return  redirect()
+    return redirect('user/login')
+
+def closeapplication(r):
+    patent = apps.get_model('Patent', 'Patentapplication')
+    if r.method == 'POST':
+        uid = r.POST['uid']
+        patent = patent.objects.get(uid=uid)
+        patent.status = True
+        patent.save()
+        return redirect('user/login')

@@ -79,7 +79,7 @@ class FilingStatus(models.Model):
 class ExaminationSatus(models.Model):
     status = models.BooleanField(default=False)
     uid = models.CharField(max_length=20)
-    date = models.DateField()
+    date = models.DateField(null=True)
 
     def __str__(self):
         return self.uid
@@ -88,7 +88,7 @@ class ExaminationSatus(models.Model):
 class FerStatus(models.Model):
     status = models.BooleanField(default=False)
     uid = models.CharField(max_length=20)
-    date = models.DateField()
+    date = models.DateField(null=True)
 
     def __str__(self):
         return self.uid
@@ -97,7 +97,7 @@ class FerStatus(models.Model):
 class HearingStatus(models.Model):
     status = models.BooleanField(default=False)
     uid = models.CharField(max_length=20)
-    date = models.DateField()
+    date = models.DateField(null=True)
 
     def __str__(self):
         return self.uid
