@@ -3,17 +3,17 @@ from django.db import models
 
 # Create your models here.
 class Copyright(models.Model):
-    categoryofwork = models.CharField(max_length=20)
-    clientname = models.CharField(max_length=30)
-    titleofwork = models.IntegerField()
-    referedby = models.IntegerField()
-    modeofcontact = models.EmailField(max_length=50)
-    conntactnumber = models.CharField(max_length=20)
-    emailid = models.EmailField(max_length=20)
-    uid=models.CharField(max_length=20)
+    categoryofwork = models.CharField(max_length=100)
+    clientname = models.CharField(max_length=100)
+    titleofwork = models.CharField(max_length=1000)
+    modeofcontact = models.EmailField(max_length=100)
+    referedby = models.CharField(max_length=1000)
+    conntactnumber = models.IntegerField(max_length=10)
+    emailid = models.EmailField(max_length=100)
+    uid = models.CharField(max_length=20)
 
     def __str__(self):
-      return self.title
+      return self.uid
 
 
 class Copyrightstatus(models.Model):
