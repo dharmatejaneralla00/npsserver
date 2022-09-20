@@ -310,10 +310,18 @@ input[type=text], select ,input[type = date]{
 
     </div>
 </center>
+{% if app.status %}
+<form action="{% url 'openapplication' %}" method="post">
+    {% csrf_token %}
+    <input name="uid" value="{{app.uid}}" hidden>
+         <button  style ="float:right; color:rgb(255, 255, 255); background-color:green;" class="but2" type="submit">Open Application</button>
+</form>
+{% else %}
 <form action="{% url 'closeapplication' %}" method="post">
     {% csrf_token %}
     <input name="uid" value="{{app.uid}}" hidden>
          <button  style ="float:right; color:rgb(255, 255, 255); background-color:red;" class="but2" type="submit">Close Application</button>
 </form>
+{% endif %}
 </body>
 </html> 

@@ -25,6 +25,7 @@ def Editapplication(r, uid):
     GrantsStatus = apps.get_model('Patent', 'GrantsStatus')
     context = {'app': patent, 'paymentstatus': paymentstatus.objects.filter(uid=uid),
                'ndastatus': nda.objects.get(uid=uid)}
+    c = {}
     if patent.patenttype == 'full':
         c = {'GrantsStatus': GrantsStatus.objects.get(uid=uid),
              'DocumentationStatus': DocumentationStatus.objects.get(uid=uid),
@@ -84,5 +85,13 @@ def closeapplication(r):
         uid = r.POST['uid']
         patent = patent.objects.get(uid=uid)
         patent.status = True
+        patent.save()
+        return redirect('user/login')
+def openapplication(r):
+    patent = apps.get_model('Patent', 'Patentapplication')
+    if r.method == 'POST':
+        uid = r.POST['uid']
+        patent = patent.objects.get(uid=uid)
+        patent.status = False
         patent.save()
         return redirect('user/login')

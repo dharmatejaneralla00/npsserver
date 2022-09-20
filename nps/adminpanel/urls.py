@@ -7,5 +7,6 @@ urlpatterns = [
     path('dashboard',views.dashboard),
     path('ndastatus',views.ndsatatus,name = 'ndastatus'),
     path('closeapplication',views.closeapplication,name = 'closeapplication'),
+    path('openapplication',views.openapplication,name = 'openapplication'),
     path('FilingStatus',views.filingstatus,name = 'FilingStatus')
 ]

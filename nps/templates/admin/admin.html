@@ -54,6 +54,7 @@ th{
               <th></th>
 </tr>
 {% for i in con %}
+            {% if not i.status %}
             <tr>
                 <td>{{i.uid}}</td>
                 <td>{{i.patenttype}}</td>
@@ -65,9 +66,11 @@ th{
                 {% endif %}
                 <td><a type="button btn-primary" style="background-color: #1694d8;padding:10px;text-decoration:none ;color: white;border-color: #1694d8;" href="{% url 'editapplication' uid=i.uid  %}" >Edit</a></td>
               </tr>
+            {% endif %}
             {% endfor %}
 
           </table>
           </div>
 </body>
+{% include 'navigation/footer.html' %}
 </html>
