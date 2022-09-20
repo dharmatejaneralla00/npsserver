@@ -223,50 +223,30 @@
           <br>
           <br>
           <br>
-          <h2 style ="color:rgb(38, 157, 212) ">Application No: U12345678</h2>
-          <form action="/action_page.php">
-            <select id="Quotation status" name="Quotation status">
+          <h2 style ="color:rgb(38, 157, 212) ">Application No: {{des.uid}}</h2>
+          <form action="">
+            <select id="Quotation status" name="quotationstatus">
               <option value="Quotation status" hidden>Quotation status</option>
               <option value="Quotation sent">Quotation sent</option>
               <option value="Agreed quotation">Agreed quotation</option>
               <option value="PO Released">PO Released</option>
             </select>
           
-            <input type="text" id="fname" name="firstname" placeholder="Quoted amount"><br>
-            <select id="To assign team" name="To assign team">
-              <option value="To assign team" hidden>To assign team</option>
-              <option value="CR Admin">CR Admin</option>
-              <option value="Others">Others</option>
+            <input type="text" id="fname" name="amount" placeholder="Quoted amount"><br>
+            <select id="To assign team" name="assignedteam">
+              <option value="To assign team" hidden>Assign team</option>
             </select>
           
-            <input type="text" id="fname" name="firstname" placeholder="Project due date"><br>
-          <form action="#">
-          
-          <br>
-          <br>
-          <form action="#">
-            <p>
+            <input type="date" id="fname" name="duedate" placeholder="Project due date"><br><p>
               
-              <h3 style ="color:rgb(38, 157, 212) ">Design Completed: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="test1" name="radio-group" checked>
+              <h3 style ="color:rgb(38, 157, 212) ">Design Completed: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="test1" name="status" checked>
               <label for="test1">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               
-              <input type="radio" id="test2" name="radio-group">
+              <input type="radio" id="test2" name="status">
               <label for="test2">No</label> </h3>
-            
-            </p>
-            
-          </form>
-          <br>
-          <br>
-       
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <button  class="button button2">SUBMIT</button>
           
-      
+          </form>
       </div>
       </center>
 </body>
