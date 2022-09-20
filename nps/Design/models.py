@@ -2,9 +2,9 @@ from django.db import models
 
 # Create your models here.
 class Design(models.Model):
-    title = models.CharField(max_length=20)
-    organisation = models.CharField(max_length=30)
-    resource = models.IntegerField()
+    categoryofwork = models.CharField(max_length=20)
+    clientname = models.CharField(max_length=30)
+    titleofwork = models.IntegerField()
     modeofcontact = models.EmailField(max_length=50)
     referedby = models.IntegerField()
     conntactnumber = models.CharField(max_length=10)

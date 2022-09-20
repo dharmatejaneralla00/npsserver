@@ -4,13 +4,14 @@ from .models import Design
 # Create your views here.
 def Designapplicationview(request):
     if request.method == 'POST':
-        title = request.POST['title']
-        organization = request.POST['organization']
-        resource = request.POST['resource']
+        categoryofwork = request.POST['categoryofwork']
+        clientname = request.POST['clientname']
+        titleofwork = request.POST['titleofwork']
+        modeofcontact = request.POST['modeofcontact']
         referedby = request.POST['referedby']
         contactnumber = request.POST['contactnumber']
         emailid = request.POST['emailid']
-        r = Design(title=title, organization=organization, resource=resource, referedBy=referedby
+        r = Design(categoryofwork=categoryofwork, clientname=clientname, titleofwork=titleofwork, modeofcontact=modeofcontact, referedBy=referedby
                                   , contactnumber=contactnumber, email=emailid)
         r.save()
         return redirect('users/login')
