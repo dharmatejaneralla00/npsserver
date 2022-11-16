@@ -111,18 +111,25 @@ input[type=text], select ,input[type = date]{
 <!-- novelty  -->
 <center>
       {% if app.patenttype == 'full' or app.patenttype == 'novelty search'  %}
-    {% if NoveltyStatus.status %}
+    <!--{% if NoveltyStatus.status %}-->
     <div class="container">
         <br>
         <br>
      <button style ="color:rgb(255, 255, 255) " class="but2">Patentablity Search</button>
-     <br>
-     <br>
-      <h3 style="color:green;">Novelty Search completed</h3>
+         {% if NoveltyStatus.status %}
+        <h2 style="color:green;">Novelty Completed</h2>
+        {% else %}
+        <form action="{% url 'NoveltyStatus' %}" method="post">
+          {% csrf_token %}
+          <input name="uid" value="{{app.uid}}" hidden>
+         <button  style ="color:rgb(255, 255, 255); background-color:green;" class="but2" type="submit">Novelty Completed</button>
+      </form></div><hr>
+
+      <!--<h3 style="color:green;">Novelty Search completed</h3>
 {% else %}
         <h3 style="color:red;">Novelty Search Pending</h3>
     <br>
-    </div><hr>
+    </div><hr>-->
     {% endif %}
       {% endif %}
     <!-- end novelty  -->
@@ -137,13 +144,21 @@ input[type=text], select ,input[type = date]{
         <br>
         <br>
      <button style ="color:rgb(255, 255, 255) " class="but2">Drafting</button>
-    
-    <br>
+     {% if DraftingStatus.status %}
+        <h2 style="color:green;">Drafting Completed</h2>
+        {% else %}
+        <form action="{% url 'DraftingStatus' %}" method="post">
+          {% csrf_token %}
+          <input name="uid" value="{{app.uid}}" hidden>
+         <button  style ="color:rgb(255, 255, 255); background-color:green;" class="but2" type="submit">Drafting Completed</button>
+      </form></div><hr>
+    <!--<br>
          <h3 style="color:green;">Drafting completed</h3>
 
         <h3 style="color:red;">Drafting not Completed</h3>
-    </div><hr>
-           {% endif %}
+    </div><hr>-->
+    {% endif %}
+        {% endif %}
 <!-- end drafting -->
 </center>
 
@@ -156,12 +171,20 @@ input[type=text], select ,input[type = date]{
         <br>
         <br>
      <button style ="color:rgb(255, 255, 255) " class="but2">Drawing</button>
-    
-    <br>
+     {% if DrawingStatus.status %}
+        <h2 style="color:green;">Drawing Completed</h2>
+        {% else %}
+        <form action="{% url 'DrawingStatus' %}" method="post">
+          {% csrf_token %}
+          <input name="uid" value="{{app.uid}}" hidden>
+         <button  style ="color:rgb(255, 255, 255); background-color:green;" class="but2" type="submit">Drawing Completed</button>
+      </form></div><hr>
+    <!--<br>
         <h3 style="color:green;">Drawing completed</h3>
 
-        <h3 style="color:red;">Drawing not Completed</h3><hr>
-                {% endif %}
+        <h3 style="color:red;">Drawing not Completed</h3><hr>-->
+       {% endif %}
+    {% endif %}
     </div>
     <!-- end drawing  -->
 </center>
@@ -175,11 +198,21 @@ input[type=text], select ,input[type = date]{
         <br>
         <br>
      <button style ="color:rgb(255, 255, 255) " class="but2">Documentation</button>
-    
-    <br ><h3 style="color:green;">Documentation completed</h3>
+     {% if DocumentationStatus.status %}
+        <h2 style="color:green;">Documentation Completed</h2>
+        {% else %}
+        <form action="{% url 'DocumentationStatus' %}" method="post">
+          {% csrf_token %}
+          <input name="uid" value="{{app.uid}}" hidden>
+         <button  style ="color:rgb(255, 255, 255); background-color:green;" class="but2" type="submit">Documentation Completed</button>
+      </form></div><hr>
+    <!--<br ><h3 style="color:green;">Documentation completed</h3>
 
         <h3 style="color:red;">Documentation not Completed</h3>
-          <hr>      {% endif %}
+          <hr>-->
+        {% endif %}
+        {% endif %}
+
     </div>
     <!-- end documentation -->
 </center>
@@ -214,15 +247,23 @@ input[type=text], select ,input[type = date]{
         <br>
         <br>
      <button style ="color:rgb(255, 255, 255) " class="but2">Examination</button>
-    
-         <form>
+        {% if ExaminationStatus.status %}
+        <h2 style="color:green;">Examination Completed</h2>
+        {% else %}
+        <form action="{% url 'ExaminationStatus' %}" method="post">
+          {% csrf_token %}
+          <input name="uid" value="{{app.uid}}" hidden>
+         <button  style ="color:rgb(255, 255, 255); background-color:green;" class="but2" type="submit">Examination Completed</button>
+      </form></div><hr>
+        <!-- <form>
             <h2 style ="color:rgb(38, 157, 212) ">
             <label for="fname"></label>
             <input type="date" id="fname" name="" placeholder="Examination Date"><br> </h2>
             <h2 style ="color:rgb(38, 157, 212) ">
             </h2>
             <button  style ="color:rgb(255, 255, 255);background-color:green; " class="but2">Submit</button>
-         </form></div><hr>
+         </form></div><hr>-->
+    {% endif %}
     {% endif %}
 </center>
 <br>
@@ -235,8 +276,15 @@ input[type=text], select ,input[type = date]{
         <br>
         <br>
      <button style ="color:rgb(255, 255, 255) " class="but2">FER</button>
-    
-     <form>
+    {% if FerStatus.status %}
+        <h2 style="color:green;">Fer Completed</h2>
+        {% else %}
+        <form action="{% url 'FerStatus' %}" method="post">
+          {% csrf_token %}
+          <input name="uid" value="{{app.uid}}" hidden>
+         <button  style ="color:rgb(255, 255, 255); background-color:green;" class="but2" type="submit">Fer Completed</button>
+      </form></div><hr>
+    <!-- <form>
         <h2 style ="color:rgb(38, 157, 212) ">
         <label for="fname"></label>
         <input type="date" id="fname" name="" placeholder="FER Date"><br> </h2>
@@ -245,7 +293,8 @@ input[type=text], select ,input[type = date]{
         </form>
        <br>
         <button  style ="color:rgb(255, 255, 255);background-color:green; " class="but2">Submit</button>
-    </div><hr>
+    </div><hr>-->
+    {% endif %}
     {% endif %}
 </center>
 <br>
@@ -258,8 +307,15 @@ input[type=text], select ,input[type = date]{
         <br>
         <br>
      <button style ="color:rgb(255, 255, 255) " class="but2">Hearing</button>
-    
-     <form>
+    {% if HearingStatus.status %}
+        <h2 style="color:green;">Hearing Completed</h2>
+        {% else %}
+        <form action="{% url 'HearingStatus' %}" method="post">
+          {% csrf_token %}
+          <input name="uid" value="{{app.uid}}" hidden>
+         <button  style ="color:rgb(255, 255, 255); background-color:green;" class="but2" type="submit">Hearing Completed</button>
+      </form></div><hr>
+     <!--<form>
          <h2 style ="color:rgb(38, 157, 212) "></h2>
         <label for="fname"></label>
         <input type="date" id="fname" name="" placeholder="Hearing Date"><br> </h2>
@@ -267,7 +323,8 @@ input[type=text], select ,input[type = date]{
         </form>
         <button  style ="color:rgb(255, 255, 255); background-color:green;" class="but2" >Submit</button>
     </div>
-<hr>
+<hr>-->
+    {% endif %}
     {% endif %}
 </center>
 <br>
@@ -280,7 +337,7 @@ input[type=text], select ,input[type = date]{
      <button style ="color:rgb(255, 255, 255) " class="but2">Payment status</button>
      <br>
      <br>
-     {% if paymentstatus.status %}
+     {% if PaymentStatus.status %}
         <h3 style="color:green;">Payment Recieved</h3>
         {% else %}
         <h3 style="color:red;">Payment not recieved</h3><hr>
@@ -294,8 +351,16 @@ input[type=text], select ,input[type = date]{
     <!-- grants -->
     <div class="container2">
                 {% if app.patenttype == 'full' %}
-        <button style ="color:rgb(255, 255, 255) " class="but2">Grants</button>
-     <form action="#">
+        <button style ="color:rgb(255, 255, 255) " class="but2">Grant</button>
+         {% if GrantStatus.status %}
+        <h2 style="color:green;">Grant Completed</h2>
+        {% else %}
+        <form action="{% url 'GrantStatus' %}" method="post">
+          {% csrf_token %}
+          <input name="uid" value="{{app.uid}}" hidden>
+         <button  style ="color:rgb(255, 255, 255); background-color:green;" class="but2" type="submit">Grant Completed</button>
+      </form></div><hr>
+     <!--<form action="#">
           
           <h3 style ="color:rgb(38, 157, 212) "> Grant :<input type="radio" id="test1" name="radio-group" checked>
           <label for="test1"> Granted</label>
@@ -305,8 +370,9 @@ input[type=text], select ,input[type = date]{
 
          <button  style ="color:rgb(255, 255, 255);background-color:green; " class="but2" type="submit">Submit</button>
         
-      </form>
+      </form>-->
         {% endif %}
+    {% endif %}
 
     </div>
 </center>

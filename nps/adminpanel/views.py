@@ -34,7 +34,7 @@ def Editapplication(r, uid):
              'FilingStatus': FilingStatus.objects.get(uid=uid),
              'DrawingStatus': DrawingStatus.objects.get(uid=uid),
              'HearingStatus': HearingStatus.objects.get(uid=uid),
-             'ExaminationSatus': ExaminationSatus.objects.get(uid=uid)}
+             'ExaminationStatus': ExaminationSatus.objects.get(uid=uid)}
     elif patent.patenttype == 'novelty search':
         c = {'NoveltyStatus': NoveltyStatus.objects.get(uid=uid)}
     elif patent.patenttype == 'drafting':

@@ -5,8 +5,9 @@
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/venvnew" />
       <excludeFolder url="file://$MODULE_DIR$/venvnew2" />
+      <excludeFolder url="file://$MODULE_DIR$/Newenvironment" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (npserp)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
